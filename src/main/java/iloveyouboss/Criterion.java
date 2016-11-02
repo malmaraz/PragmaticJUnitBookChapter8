@@ -23,4 +23,11 @@ public class Criterion implements Scoreable {
    
    public void setScore(int score) { this.score = score; }
    public int getScore() { return score; }
+
+boolean matches(Answer answer) {
+	boolean match = 
+	       getWeight() == Weight.DontCare ||
+	       answer.match(getAnswer());
+	return match;
+}
 }
